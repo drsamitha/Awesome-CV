@@ -1,9 +1,9 @@
 name: Compile PDFs
 
 on:
-  push:  
+  push:
     branches: [ master ]
-  pull_request: 
+  pull_request:
     branches: [master]
 
 jobs:
@@ -29,18 +29,18 @@ jobs:
 
     - uses: actions/upload-artifact@v4
       with:
-        name: examples
-        path: examples/*.pdf
+        name: Docs
+        path: Docs/*.pdf
 
     - name: Rename PDFs with date
       run: |
-        cp examples/cv.pdf examples/cv-${{ env.DATE }}.pdf
-        cp examples/resume.pdf examples/resume-${{ env.DATE }}.pdf
+        cp Docs/cv.pdf Docs/cv-${{ env.DATE }}.pdf
+        cp Docs/resume.pdf Docs/resume-${{ env.DATE }}.pdf
 
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
       with:
         tag_name: ${{ env.TAG }}
         files: |
-          examples/cv-${{ env.DATE }}.pdf
-          examples/resume-${{ env.DATE }}.pdf
+          Docs/cv-${{ env.DATE }}.pdf
+          Docs/resume-${{ env.DATE }}.pdf
