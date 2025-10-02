@@ -40,7 +40,6 @@ jobs:
         cp Docs/cv.pdf Docs/cv-${{ env.DATE }}.pdf
         cp Docs/resume.pdf Docs/resume-${{ env.DATE }}.pdf
         cp Docs/Cv-Resume.pdf Docs/Cv-Resume-${{ env.DATE }}.pdf
-        
 
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
@@ -50,4 +49,3 @@ jobs:
           Docs/cv-${{ env.DATE }}.pdf
           Docs/resume-${{ env.DATE }}.pdf
           Docs/Cv-Resume-${{ env.DATE }}.pdf
-          
