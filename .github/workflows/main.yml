@@ -26,6 +26,9 @@ jobs:
     - name: Compile resume
       run: make resume.pdf
 
+    - name: Compile Cv-Resume.pdf
+      run: make Cv-Resume.pdf
+
 
     - uses: actions/upload-artifact@v4
       with:
@@ -36,6 +39,7 @@ jobs:
       run: |
         cp Docs/cv.pdf Docs/cv-${{ env.DATE }}.pdf
         cp Docs/resume.pdf Docs/resume-${{ env.DATE }}.pdf
+        cp Docs/Cv-Resume.pdf Docs/Cv-Resume-${{ env.DATE }}.pdf
 
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
@@ -44,3 +48,4 @@ jobs:
         files: |
           Docs/cv-${{ env.DATE }}.pdf
           Docs/resume-${{ env.DATE }}.pdf
+          Docs/Cv-Resume-${{ env.DATE }}.pdf

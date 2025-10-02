@@ -15,6 +15,9 @@ resume.pdf: $(DOCS_DIR)/resume.tex $(RESUME_SRCS)
 cv.pdf: $(DOCS_DIR)/cv.tex $(CV_SRCS)
 	$(CC) -output-directory=$(DOCS_DIR) $<
 
+Cv-Resume.pdf: $(DOCS_DIR)/Cv-Resume.tex $(CV_SRCS)
+	$(CC) -output-directory=$(DOCS_DIR) $<
+
 coverletter.pdf: $(DOCS_DIR)/coverletter.tex
 	$(CC) -output-directory=$(DOCS_DIR) $<
 
